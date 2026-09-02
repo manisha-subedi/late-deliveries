@@ -1,0 +1,17 @@
+[project]
+name = "late-deliveries"
+version = "0.1.0"
+description = "How much does a late delivery cost in review stars? Olist orders, 2016 to 2018."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+  "duckdb>=1.1",
+  "matplotlib>=3.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
