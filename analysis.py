@@ -146,7 +146,10 @@ def late_pct_with_longer_promise(con, extra_days):
 def show(title, cols, rows):
     print(f"\n{title}")
     widths = [max(len(c), *(len(str(r[i])) for r in rows)) for i, c in enumerate(cols)]
-    line = lambda r: "  ".join(str(v).ljust(w) for v, w in zip(r, widths))
+
+    def line(values):
+        return "  ".join(str(v).ljust(w) for v, w in zip(values, widths))
+
     print(line(cols))
     print(line(["-" * w for w in widths]))
     for r in rows:
